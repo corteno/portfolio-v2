@@ -2,23 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Borsodi Dávid - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Borsodi Dávid | Full Stack Developer</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/img/favico.png?v=2">
 </head>
 <body>
 <div class="site-wrapper col">
-    <div class="dark-mode-wrapper">
+    <header class="header-wrapper">
+        <div class="header-content-wrapper">
+            <a href="#background" class="header-link blue-link">Background</a>
+            <a href="#projects" class="header-link blue-link">Projects</a>
+            <a href="#contact" class="header-link blue-link">Contact</a>
+        </div>
 
-    </div>
+    </header>
     <section class="intro-wrapper col">
         <h1 class="intro-title">Hello!</h1>
-        <h2 class="intro-headline">I'm <strong>Borsodi Dávid</strong>, a full-stack developer focused on building
-            beautiful interfaces & experiences</h2>
-        <h3 class="intro-contact">Get in touch at <a class="blue-link" href="mailto:hello@borsodidavid.com">hello@borsodidavid.com</a>
-            or through my
-            <a href="#contact" class="blue-link">contact form</a></h3>
+        <h2 class="intro-headline">I'm <strong>Borsodi Dávid</strong>, a full-stack developer focused on building user
+            interfaces & experiences</h2>
+        <h3 class="intro-contact">
+            Get in touch with me at <a class="blue-link" href="mailto:hello@borsodidavid.com">hello@borsodidavid.com</a>
+            or directly through my <a href="#contact" class="blue-link header-link">contact form</a>
+        </h3>
     </section>
     <section class="background">
+        <a id="background" class="anchor-link"></a>
         <h3 class="section-title">Background</h3>
         <div class="section-content">
             <p>
@@ -91,6 +100,7 @@
         </div>
     </section>
     <section class="projects">
+        <a id="projects" class="anchor-link"></a>
         <h3 class="section-title">Projects</h3>
         <div class="project-wrapper col">
 
@@ -138,16 +148,93 @@
                 </div>
             </div>
             <!-- Project end -->
+
+            <!-- Project start -->
+            <div class="col">
+                <a class="project-title blue-link" href="https://vilagoroksegutlevel.hu" target="_blank"
+                   referrerpolicy="no-referrer">World Heritage Passport</a>
+                <h4 class="section-subtitle">2019 - Effix Marketing</h4>
+                <div class="section-content project-content col">
+                    <p>
+                        Sister site of the World Heritage Visitor Center focused on a smaller specific area.
+                    </p>
+                    <div class="project-images">
+                        <img class="project-image"
+                             src="./assets/img/vilagorokseg/vilagoroksego_iphone_portrait_01.png"
+                             alt="peisonia.hu site on an iPhone">
+                        <img class="project-image"
+                             src="./assets/img/vilagorokseg/vilagoroksego_iphone_portrait_02.png"
+                             alt="peisonia.hu site on an iPhone">
+                    </div>
+                </div>
+            </div>
+            <!-- Project end -->
+
+            <!-- Project start -->
+            <div class="col">
+                <a class="project-title blue-link" href="https://corteno.github.io/portfolio/" target="_blank"
+                   referrerpolicy="no-referrer">Portfolio v1</a>
+                <h4 class="section-subtitle">2017</h4>
+                <div class="section-content project-content col">
+                    <p>
+                        First iteration of my personal website made back in 2017.
+                    </p>
+                    <div class="project-images">
+                        <img class="project-image"
+                             src="./assets/img/portfolio/portfolio_iphone_portrait_01.png"
+                             alt="peisonia.hu site on an iPhone">
+                        <img class="project-image"
+                             src="./assets/img/portfolio/portfolio_iphone_portrait_02.png"
+                             alt="peisonia.hu site on an iPhone">
+                    </div>
+                </div>
+            </div>
+            <!-- Project end -->
         </div>
     </section>
 
     <section class="contact">
+        <a id="contact" class="anchor-link"></a>
         <h3 class="section-title">Contact</h3>
-        <div class="section-content row">
+        <div class="contact-content col">
+            <form action="" class="contact-form col">
+                <label for="name" class="form-input-label col">
+                    <input type="text" id="name" class="form-input" placeholder="Name">
+                    <div class="form-input-line"></div>
+                </label>
+                <label for="email" class="form-input-label col">
+                    <input type="email" id="email" class="form-input" placeholder="E-mail">
+                    <div class="form-input-line"></div>
+                </label>
+                <label for="message" class="form-input-label col">
+                    <textarea name="message" id="message" cols="30" rows="5" class="form-input"
+                        placeholder="Message"
+                    ></textarea>
+                    <div class="form-input-line"></div>
+                </label>
+                <input type="Submit" class="form-submit" value="Send">
+            </form>
+            <p class="contact-message"></p>
+            <div class="contact-text">
+                <p>Or you can e-mail me directly at</p>
+                <a href="mailto:hello@borsodidavid.com" class="blue-link contact-link">hello@borsodidavid.com</a>
+            </div>
 
         </div>
-
     </section>
+    <footer>
+        <div class="footer-links-wrapper">
+            <a href="https://github.com/corteno" target="_blank" class="footer-link github">
+                <img src="./assets/img/github.svg" alt="GitHub logo" />
+            </a>
+        </div>
+        <p class="footer-copyright">Handmade by me © 2020.</p>
+    </footer>
 </div>
+<script src="assets/js/sendContact.js"></script>
+<script src="assets/js/smooth-scroll.js"></script>
+<script>
+    var scroll = new SmoothScroll('a[href*="#"]');
+</script>
 </body>
 </html>

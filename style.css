@@ -1,6 +1,6 @@
 :root {
     font-size: 16px;
-    font-family: "Source Sans Pro", system, system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    font-family: SourceSansProRegular, system, system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
 
     --bg-light-primary: #fff;
     --bg-dark-primary: #000;
@@ -30,10 +30,11 @@ body, main, div, form, input, textarea, label, ul, li, header, nav, a, h1, h2, h
 
 html {
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
-    padding-bottom: 100px;
+    margin: 0;
 }
 
 strong {
@@ -56,14 +57,37 @@ a:focus {
     justify-content: center;
     align-items: center;
     width: 100%;
+    overflow: hidden;
+}
+
+.header-wrapper {
+    display: flex;
+    position: fixed;
+    top: 0;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 100vw;
+    justify-content: flex-end;
+    background: #fff;
+    z-index: 3;
+}
+
+.header-content-wrapper {
+
+}
+
+header .header-link {
+    font-size: 18px;
+    margin: 0 15px;
 }
 
 .intro-wrapper {
     max-width: 1240px;
-    width: 100%;
+    width: calc(100% - 40px);
     height: 80vh;
-    padding: 0;
-    margin: 100px 150px;
+    padding: 0 20px;
+    margin: 100px 130px;
     justify-content: center;
 }
 
@@ -87,11 +111,14 @@ a:focus {
 }
 
 .intro-contact {
+    display: inline;
     font-weight: 400;
     font-size: 1.3rem;
+    line-height: 32px;
 }
 
 .blue-link {
+    display: inline;
     position: relative;
     margin-left: 12px;
     margin-right: 12px;
@@ -100,6 +127,7 @@ a:focus {
     z-index: 2;
     transition: 0.2s color;
     font-weight: 600;
+    word-break: keep-all;
 }
 
 .blue-link:after {
@@ -139,7 +167,13 @@ a:focus {
     left: -5px;
 }
 
+.anchor-link {
+    position: absolute;
+    top: -100px;
+}
+
 section {
+    position: relative;
     max-width: 1240px;
     width: 100%;
     margin-bottom: 100px;
@@ -246,6 +280,7 @@ section {
 }
 
 .project-image {
+    align-self: flex-start;
     max-width: 35%;
     margin-right: 40px;
 }
@@ -254,29 +289,199 @@ section {
     margin-bottom: 40px;
 }
 
+.contact-form {
+    max-width: 400px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.form-input-label{
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border: none;
+    color: var(--text-light-primary);
+    font-family: SourceSansProBold, sans-serif;
+    font-size: 16px;
+}
+
+.form-input:focus{
+    outline: none;
+}
+
+.form-input-line{
+    position: absolute;
+    bottom: 20px;
+    content: '';
+    width: 100%;
+    height: 3px;
+    background: #007bff;
+}
+
+textarea.form-input {
+    resize: none;
+}
+
+.form-submit {
+    appearance: none;
+    -webkit-appearance: none;
+    align-self: flex-start;
+    padding: 10px 25px;
+    border: none;
+    background: var(--text-light-secondary);
+    color:#fff;
+    font-family: SourceSansProBold, sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
 
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--text-light-tertiary);
+    font-family: SourceSansProRegular, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    opacity: 1; /* Firefox */
+}
+
+.contact {
+    margin-bottom: 150px;
+}
+
+.contact-content p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.contact-text {
+    margin-top: 30px;
+}
+
+
+.contact-link {
+    align-self: flex-start;
+}
+
+.contact-message {
+    padding-top: 10px;
+}
+
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+    width: 100%;
+    background: #262626;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-copyright {
+    margin: 0;
+    color: #717171;
+}
+
+@media only screen and (max-width: 700px) {
+    .intro-title, .intro-headline {
+        font-size: 2rem;
+    }
+
+    .intro-wrapper {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .intro-title {
+        margin-top: 0;
+    }
+
+    section {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        flex-direction: column;
+    }
+
+    .section-title {
+        width: 100%;
+        justify-content: flex-start;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .section-content {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .section-content {
+        width: calc(100% - 40px);
+    }
+
+    .project-wrapper {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .project-wrapper .section-content {
+        margin: 0;
+    }
+
+    .contact-content {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .header-wrapper {
+        display: flex;
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    .intro-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        line-height: 35px;
+    }
+
+    .intro-contact a {
+        margin-left: 0;
+    }
+
+    .skills .section-content {
+        flex-wrap: wrap;
+    }
+
+    .skills .col {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+}
 
 /*===============================
              FONTS
 =================================*/
 @font-face {
-    font-family: "Source Sans Pro";
+    font-family: SourceSansProRegular;
     src: url("./assets/fonts/SourceSansPro-Regular.ttf");
-    font-weight: 400;
-    font-style: normal;
 }
 
 
 @font-face {
-    font-family: "Source Sans Pro";
+    font-family: SourceSansProLight;
     src: url("./assets/fonts/SourceSansPro-Light.ttf");
-    font-weight: 300;
-    font-style: normal;
 }
 
 @font-face {
-    font-family: "Source Sans Pro";
+    font-family: SourceSansProBold;
     src: url("./assets/fonts/SourceSansPro-SemiBold.ttf");
-    font-weight: 700;
 }
