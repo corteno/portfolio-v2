@@ -359,6 +359,7 @@ textarea.form-input {
 }
 
 .contact-text {
+    justify-content: center;
     margin-top: 30px;
 }
 
